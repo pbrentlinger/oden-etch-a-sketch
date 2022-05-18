@@ -1,0 +1,11 @@
+#etch_a_sketch{
+    width: 960px;
+}
+
+.gridRow{
+    display: flex;
+}
+
+.cell{
+    border: #654aff 1px inset;
+}

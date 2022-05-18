@@ -7,14 +7,23 @@
 // flexbox
 // CSS Grid  - https://css-tricks.com/snippets/css/complete-guide-grid/
 
-// todo: make a 16x16 grid of divs
 
 const sketch = document.getElementById("etch_a_sketch");
 
 function makeGrid(size){
 //    take user input at size of grid limited to 100 x 100
-    for (let divs = 0; divs < size; divs++){
-        const newDiv = document.createElement("div");
-        newDiv.className("pixel");
+    // for the size I want to loop over a loop the size of the grid
+    for (let rows = 0; rows < size; rows++){
+        const newRow = document.createElement("div");
+        newRow.className = "gridRow";
+        
+        for (let divs = 0; divs < size; divs++){
+            const newCell = document.createElement("div");
+            newCell.className = "cell";
+            newRow.appendChild(newCell);
+        }
+        sketch.appendChild(newRow);
     }
 }
+
+makeGrid(16);
