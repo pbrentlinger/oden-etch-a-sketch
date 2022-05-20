@@ -1,5 +1,7 @@
 #etch_a_sketch{
     width: 960px;
+    height: 100vh;
+    display: grid;
 }
 
 .gridRow{
@@ -8,4 +10,5 @@
 
 .cell{
     border: #654aff 1px inset;
+    flex-grow: 1;
 }
