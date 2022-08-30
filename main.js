@@ -8,8 +8,14 @@
 // flexbox
 // CSS Grid  - https://css-tricks.com/snippets/css/complete-guide-grid/
 
-
 const sketch = document.getElementById("etch_a_sketch");
+
+function randRGB(){
+    let r = Math.floor(Math.random() * 255);
+    let g = Math.floor(Math.random() * 255);
+    let b = Math.floor(Math.random() * 255);
+    return "rgb("+r+","+g+","+b+")";
+}
 
 function makeGrid(size){
 //    take user input at size of grid limited to 100 x 100
@@ -28,8 +34,9 @@ function makeGrid(size){
     
     sketch.addEventListener("mouseover", function (e){
        if(e.target && e.target.matches("div.cell")) {
-           // console.log("click");
-           e.target.classList.add("line");
+           // console.log(e.target);
+           // e.target.classList.add("line");
+           e.target.style.backgroundColor = randRGB();
        } 
     });
     
