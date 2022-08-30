@@ -25,6 +25,29 @@ function makeGrid(size){
         }
         sketch.appendChild(newRow);
     }
+    
+    sketch.addEventListener("mouseover", function (e){
+       if(e.target && e.target.matches("div.cell")) {
+           // console.log("click");
+           e.target.classList.add("line");
+       } 
+    });
+    
 }
 
-makeGrid(16);
+function promptGrid() {
+    let gridSize = prompt("Please enter a number (less than 100) for the size of the grid you'd like");
+    
+    if (isNaN(gridSize)){
+        console.log("Not a number");
+    } else if (gridSize > 100) {
+        console.log("Too large a number")
+    } else {
+        sketch.innerHTML = "";
+        makeGrid(gridSize);
+    }
+}
+
+
+
+

@@ -1,6 +1,6 @@
 #etch_a_sketch{
     width: 960px;
-    height: 100vh;
+    height: 960px;
     display: grid;
 }
 
@@ -11,4 +11,8 @@
 .cell{
     border: #654aff 1px inset;
     flex-grow: 1;
+}
+
+.line{
+    background-color: teal;
 }
